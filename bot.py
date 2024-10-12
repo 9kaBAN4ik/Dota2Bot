@@ -3,7 +3,7 @@ import disnake
 from disnake.ext import commands
 import logging
 
-log_file_path = r'C:/Users/nikol/OneDrive/Рабочий стол/dota2bot/pythonProject8/discord.log'
+log_file_path = r'Your_Path_for_"discord.log"_file'
 
 intents = disnake.Intents.all()
 logging.basicConfig(level=logging.INFO)
@@ -13,7 +13,7 @@ handler = logging.FileHandler(filename=log_file_path, encoding='utf-8', mode='w'
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-bot = commands.Bot(command_prefix="!", intents=intents, test_guilds=[1078122248881307689])
+bot = commands.Bot(command_prefix="!", intents=intents, test_guilds=["Your_Test_channel_for_bot"])
 
 @bot.event
 async def on_ready():
@@ -23,7 +23,7 @@ async def on_ready():
                 bot.load_extension(f"cogs.{file[:-3]}")
             except Exception as e:
                 print(f"Не удалось загрузить ког {file}: {e}")
-    with open('C:/Users/nikol/OneDrive/Рабочий стол/dota2bot/pythonProject8/bot_avatar.png', 'rb') as avatar:
+    with open('Your_Path_for_avatar_bot', 'rb') as avatar:
         await bot.user.edit(avatar=avatar.read())
     print("Bot is ready!")
 

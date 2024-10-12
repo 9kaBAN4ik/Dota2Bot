@@ -1,14 +1,14 @@
 import disnake
 from disnake.ext import commands
 
-EMOJI_IMMORTAL = "<:Immortal:1254053949376299048>"
-EMOJI_DIVINE = "<:Divine:1254053947212038166>"
-EMOJI_ANCIENT = "<:Ancient:1254053946184564818>"
-EMOJI_LEGEND = "<:Legend:1254053944683139083>"
-EMOJI_ARCHON = "<:Archon:1254053943114334330>"
-EMOJI_CRUSADER = "<:Crusader:1254058154686152835>"
-EMOJI_GUARDIAN = "<:Guardian:1254054080725127259>"
-EMOJI_HERALD = "<:Herald:1254054078691020820>"
+EMOJI_IMMORTAL = "Emoji_for_rank"
+EMOJI_DIVINE = "Emoji_for_rank"
+EMOJI_ANCIENT = "Emoji_for_rank"
+EMOJI_LEGEND = "Emoji_for_rank"
+EMOJI_ARCHON = "Emoji_for_rank"
+EMOJI_CRUSADER = "Emoji_for_rank"
+EMOJI_GUARDIAN = "Emoji_for_rank"
+EMOJI_HERALD = "Emoji_for_rank"
 
 class SelectGames(disnake.ui.Select):
     def __init__(self):

@@ -17,23 +17,23 @@ class SelectGames(disnake.ui.View):
         super().__init__()
         self.event_cog = event_cog
 
-    @disnake.ui.button(label="Carry", style=disnake.ButtonStyle.secondary, emoji="<:pos1:1254111500470325348>")
+    @disnake.ui.button(label="Carry", style=disnake.ButtonStyle.secondary, emoji="Your_EMOJI_ID_FOR_POS1")
     async def carry_button(self, button: disnake.ui.Button, interaction: disnake.MessageInteraction):
         await self.event_cog.select_callback(interaction, "1")
 
-    @disnake.ui.button(label="Midlaner", style=disnake.ButtonStyle.secondary, emoji="<:pos2:1254111501682348152>")
+    @disnake.ui.button(label="Midlaner", style=disnake.ButtonStyle.secondary, emoji="Your_EMOJI_ID_FOR_POS2")
     async def midlaner_button(self, button: disnake.ui.Button, interaction: disnake.MessageInteraction):
         await self.event_cog.select_callback(interaction, "2")
 
-    @disnake.ui.button(label="Hard Laner", style=disnake.ButtonStyle.secondary, emoji="<:pos3:1254111502839976060>")
+    @disnake.ui.button(label="Hard Laner", style=disnake.ButtonStyle.secondary, emoji="Your_EMOJI_ID_FOR_POS3")
     async def hard_laner_button(self, button: disnake.ui.Button, interaction: disnake.MessageInteraction):
         await self.event_cog.select_callback(interaction, "3")
 
-    @disnake.ui.button(label="Soft Support", style=disnake.ButtonStyle.secondary, emoji="<:pos4:1254111504186212464>")
+    @disnake.ui.button(label="Soft Support", style=disnake.ButtonStyle.secondary, emoji="Your_EMOJI_ID_FOR_POS4")
     async def soft_support_button(self, button: disnake.ui.Button, interaction: disnake.MessageInteraction):
         await self.event_cog.select_callback(interaction, "4")
 
-    @disnake.ui.button(label="Hard Support", style=disnake.ButtonStyle.secondary, emoji="<:pos5:1254111498259664997>")
+    @disnake.ui.button(label="Hard Support", style=disnake.ButtonStyle.secondary, emoji="Your_EMOJI_ID_FOR_POS5")
     async def hard_support_button(self, button: disnake.ui.Button, interaction: disnake.MessageInteraction):
         await self.event_cog.select_callback(interaction, "5")
 
@@ -43,7 +43,7 @@ class EventCog(commands.Cog):
 
     @commands.command(name="close")
     async def close_command(self, ctx, *, action: str):
-        if action == "create" and any(role.name == "Closemaker" for role in ctx.author.roles) and ctx.author == ctx.message.author:
+        if action == "create" and any(role.name == "NAME_ROLE_FOR_available_COMMAND" for role in ctx.author.roles) and ctx.author == ctx.message.author:
             view = SelectGames(self)
             embed = self.generate_event_embed()
             await ctx.send(embed=embed, view=view)
